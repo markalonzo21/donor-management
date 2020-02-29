@@ -1,0 +1,25 @@
+div.modal.fade#addDonorForm(tabindex='-1', role='dialog', data-backdrop="static", aria-hidden='true')
+    div.modal-dialog.modal-dialog-centered(role='document')
+        div.modal-content
+            div.modal-header
+                h5.modal-title Add Donor
+                button.close(type="button", data-dismiss='modal', aria-label='Close')
+                    span(aria-hidden='true') &times;
+            div.modal-body
+                form(method='POST', action='/users/register')
+                    div.form-group
+                        label(for='name') Full Name
+                        input.form-control#name(type="text", name="fullname")
+                    div.form-group
+                        label(for='street') Street
+                        input.form-control#street(type="text", name="street")
+                    div.form-group
+                        label(for='phone') Phone
+                        input.form-control#phone(type="text", name="phone")
+                    div.form-group
+                        label(for='email') Email
+                        input.form-control#email(type="email", name="email")
+                    button.btn.btn-success.btn-lg.btn-block(type='submit')
+                        i.fa.fa-user-plus 
+                            span DONOR
+                    

@@ -1,0 +1,19 @@
+-
+    var ths = ["Campaign Name", "Description", "Total Amount"]
+div.home
+    //- p= perCampaign[0].aggregated_campaign
+    button.btn.btn-lg.btn-primary.add-donor(type="button", data-toggle='modal', data-target='#addCampaignForm')
+        i.fa.fa-plus-circle  
+            span CAMPAIGN
+    table.table.table-bordered
+        thead
+            tr
+                each val in ths
+                    th(scope='col')= val
+        tbody
+            each val in perCampaign
+                tr
+                    td= val.title
+                    td= val.desc
+                    td(align="right" scope="row")= '$' + val.total
+include modals/addCampaign

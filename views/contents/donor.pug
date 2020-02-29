@@ -1,0 +1,21 @@
+//- script
+//-     console.log(users);
+- var ths = ["Name", "Street", "Phone", "Email"]
+div.home
+    //- p= users
+    button.btn.btn-lg.btn-primary.add-donor(type="button", data-toggle='modal', data-target='#addDonorForm')
+        i.fa.fa-user-plus  
+            span DONOR
+    table.table.table-bordered
+        thead
+            tr
+                each val in ths
+                    th(scope='col')= val
+        tbody
+            each user in users
+                tr
+                    td= user.fullname
+                    td= user.street
+                    td= user.phone
+                    td= user.email
+include modals/addDonor

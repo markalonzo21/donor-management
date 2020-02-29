@@ -1,0 +1,27 @@
+-
+    var ths = ["Date", "Donor", "Campaign", "Amount"]
+    function prettyDate(date){
+        var newDate = new Date(date);
+        var d = newDate.getDate();
+        var m = newDate.getMonth() + 1;
+        var y = newDate.getFullYear();
+        return `${d}/${m}/${y}`;
+    }
+div.home
+    //- p= perCampaign
+    button.btn.btn-lg.btn-primary.add-donor(type="button", data-toggle='modal', data-target='#addDonationForm')
+        i.fa.fa-plus-circle  
+            span Donation
+    table.table.table-bordered
+        thead
+            tr
+                each val in ths
+                    th(scope='col')= val
+        tbody
+            each val in donations
+                tr
+                    td= prettyDate(val.date)
+                    td= val.donor
+                    td= val.campaign
+                    td(align="right", scope="row")= '$' + val.amount
+include modals/addDonation

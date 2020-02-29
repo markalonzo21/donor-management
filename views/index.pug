@@ -1,0 +1,25 @@
+extends layout
+block content
+  -
+    const total = donations.reduce((currentTotal, item) => {
+        return item.amount + currentTotal;
+    }, 0);
+  div.container
+    h1.heading= title
+    div.total
+      h3 Total Amount: 
+        b.total-amount= '$ ' + total
+    div.row
+      div.col-3
+        div.nav.flex-column.nav-pills#v-pills-tab(aria-orientation="vertical")
+          a.nav-link.active#v-pills-home-tab(data-toggle='pill', href='#home', role="tab", aria-controls="v-pills-home", aria-selected="true") Home
+          a.nav-link#v-pills-donor-tab(data-toggle='pill', href='#donor', role="tab", aria-controls="v-pills-donor", aria-selected="false") Donor
+          a.nav-link#v-pills-campaign-tab(data-toggle='pill', href='#campaign', role="tab", aria-controls="v-pills-campaign", aria-selected="false") Campaign
+      div.col-9
+        div.tab-content#v-pills-tabContent
+          div.tab-pane.fade.show.active#home(role="tabpanel", aria-labelledby="v-pills-home-tab")
+            include contents/home
+          div.tab-pane.fade#donor(role="tabpanel", aria-labelledby="v-pills-donor-tab")
+            include contents/donor
+          div.tab-pane.fade#campaign(role="tabpanel", aria-labelledby="v-pills-campaign-tab")
+            include contents/campaign

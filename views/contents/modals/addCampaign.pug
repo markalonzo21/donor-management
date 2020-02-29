@@ -1,0 +1,19 @@
+div.modal.fade#addCampaignForm(tabindex='-1', role='dialog', data-backdrop="static", aria-hidden='true')
+    div.modal-dialog.modal-dialog-centered(role='document')
+        div.modal-content
+            div.modal-header
+                h5.modal-title Add Campaign
+                button.close(type="button", data-dismiss='modal', aria-label='Close')
+                    span(aria-hidden='true') &times;
+            div.modal-body
+                form(method='POST', action='/campaigns/register')
+                    div.form-group
+                        label(for='campaignTitle') Campaign Title
+                        input.form-control#title(type="text", name="campaign_title")
+                    div.form-group
+                        label(for='campaignDes') Campaign Description
+                        textarea.form-control#description(type="text", name="campaign_description", row='3')
+                    button.btn.btn-success.btn-lg.btn-block(type='submit')
+                        i.fa.fa-plus-circle 
+                            span Campaign
+                    

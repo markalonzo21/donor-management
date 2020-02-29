@@ -1,0 +1,92 @@
+body {
+  padding: 50px 0;
+  font: 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-color: #242038;
+  color: #ffffff;
+}
+
+.heading {
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.total {
+  text-transform: uppercase;
+  /* display: inline-block; */
+  float: right;
+  border-bottom: 2px solid;
+  padding: 2px 20px;
+}
+
+.nav-pills {
+  text-transform: uppercase;
+  /* color: ; */
+}
+
+a {
+  color: #c5c4ce;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: #7767c6;
+}
+
+table th {
+  text-align: center;
+}
+
+table th,
+td {
+  color: #ffffff;
+}
+
+.total-amount {
+  color: #218838;
+}
+
+.btn-primary.add-donor,
+.btn-primary:active .add-donor {
+  float: right;
+  background-color: #7767c6;
+  border-color: #7767c6;
+  padding: 5px 50px;
+}
+
+.add-donor {
+  margin-bottom: 20px;
+}
+
+.add-donor:hover,
+.add-donor:active {
+  background-color: #9286c9;
+  border-color: #9286c9;
+}
+
+.add-donor span {
+  font-size: 16px;
+}
+
+/* forms */
+.form-control:focus {
+  border-color: #7767c6;
+  box-shadow: 0 0 0 0.2rem rgba(119, 103, 198, 0.25);
+}
+
+/* modal */
+.modal-header {
+  background-color: #7767c6;
+  border-bottom: 1px solid #9286c9;
+}
+
+.modal-header h5 {
+  font-family: gotham rounded a, gotham rounded b, sans-serif;
+}
+
+.modal-body {
+  /* background-color: #c5c4ce; */
+  color: #242038;
+}
+.close span {
+  color: #242038;
+}

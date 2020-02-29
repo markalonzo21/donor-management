@@ -1,0 +1,31 @@
+div.modal.fade#addDonationForm(tabindex='-1', role='dialog', data-backdrop="static", aria-hidden='true')
+    div.modal-dialog.modal-dialog-centered(role='document')
+        div.modal-content
+            div.modal-header
+                h5.modal-title Add Donation
+                button.close(type="button", data-dismiss='modal', aria-label='Close')
+                    span(aria-hidden='true') &times;
+            div.modal-body
+                form(method='POST', action='/donations/register')
+                    div.form-group
+                        label(for='donorField') Donor
+                        select.form-control#donorField(name="donor")
+                            each user in users
+                                option= user.fullname
+                    div.form-group
+                        label(for='campaignField') Campaign
+                        select.form-control#campaignField(name="campaign")
+                            each val in campaigns
+                                option= val.campaign_title
+                    div.form-group
+                        label(for='amount') Amount
+                        div.input-group
+                            div.input-group-prepend
+                                span.input-group-text $
+                            input.form-control#amount(type="text", name="amount")
+                            div.input-group-append
+                                span.input-group-text .00
+                    button.btn.btn-success.btn-lg.btn-block(type='submit')
+                        i.fa.fa-user-plus 
+                            span DONATION
+                    
